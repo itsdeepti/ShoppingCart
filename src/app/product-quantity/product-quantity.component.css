@@ -1,0 +1,10 @@
+.card-footer{
+    padding: 0;
+    
+}
+.add-to-cart{
+    width: 100%;
+}
+.card-footer button{
+    cursor: pointer;
+}

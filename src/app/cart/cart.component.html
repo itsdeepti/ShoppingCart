@@ -1,0 +1,39 @@
+<h1>Shopping Cart</h1>
+<p>You have {{sumCart}} items in your cart
+
+    <button *ngIf="productsToShow.length" (click)="clearCart()" class="btn btn-light btn-sm">
+        Clear Cart</button>
+</p>
+<table class="table">
+    <tr>
+        <th>Products</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Total Price</th>
+    </tr>
+    <tr *ngFor="let p of productsToShow">
+
+        <td>{{p.name}}</td>
+        <td>
+            <app-product-quantity [p]="p"></app-product-quantity>
+        </td>
+        <td>{{p.price}}</td>
+        <td>{{p.totalPrice | currency : 'USD'}}</td>
+    </tr>
+    <tr>
+        <td>
+            <b>Order Total
+
+            </b>
+        </td>
+        <td>
+        </td>
+        <td>
+        </td>
+        <td>
+            <b> {{orderTotal | currency : 'USD'}}</b>
+        </td>
+    </tr>
+    <a *ngIf="productsToShow.length" routerLink="/check-out" class="btn btn-primary">Check Out</a>
+
+</table>

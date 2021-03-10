@@ -1,0 +1,14 @@
+.product-image{
+    height: 130px;
+    width: 238px;
+}
+.card-footer{
+    padding: 0;
+    
+}
+.add-to-cart{
+    width: 100%;
+}
+.card-footer button{
+    cursor: pointer;
+}

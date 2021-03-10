@@ -1,0 +1,37 @@
+<div class="col">
+    <div class="card" style="width: 15rem;">
+        <img class="card-img-top product-image" [src]="p.data.imageUrl">
+        <div class="card-body">
+            <h5 class="card-title">{{p.data.title}} </h5>
+            <p class="card-text">{{p.data. price }}</p>
+        </div>
+        <div class="card-footer">
+            <button 
+            *ngIf="getQuantity(p) === 0; else updateCart" 
+            (click)="addToCart(p)"
+                class="btn btn-secondary add-to-cart">Add to Cart</button>
+            <ng-template #updateCart>
+                <!-- <div class="row no-gutters">
+
+
+                    <div class="col-2">
+                        <button 
+                        (click)="decreaseQuantity(p)"
+                        class="btn btn-secondary btn-block">-</button>
+                    </div>
+                    <div class="col text-center">
+                        {{getQuantity(p)}} in cart
+                    </div>
+                    <div class="col-2">
+                        <button (click)="addToCart(p)" class="btn btn-secondary btn-block">+</button>
+                    </div>
+
+                </div> -->
+                <app-product-quantity [p]="p"></app-product-quantity>
+                
+            </ng-template>
+
+            <!-- <div>{{getQuantity(p)}}</div> -->
+        </div>
+    </div>
+</div>
